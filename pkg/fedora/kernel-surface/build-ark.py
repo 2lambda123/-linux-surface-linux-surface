@@ -10,7 +10,7 @@ import time
 
 
 def system(cmd: str) -> None:
-    subprocess.run(cmd, shell=True, check=True)
+    subprocess.run(cmd, shell=False, check=True)
 
 
 parser = argparse.ArgumentParser(usage="Build a patched Fedora kernel")
