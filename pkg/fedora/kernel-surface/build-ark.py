@@ -7,10 +7,11 @@ import os
 import shutil
 import subprocess
 import time
+from security import safe_command
 
 
 def system(cmd: str) -> None:
-    subprocess.run(cmd, shell=True, check=True)
+    safe_command.run(subprocess.run, cmd, shell=True, check=True)
 
 
 parser = argparse.ArgumentParser(usage="Build a patched Fedora kernel")

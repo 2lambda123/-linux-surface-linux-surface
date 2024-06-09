@@ -4,6 +4,7 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from security import safe_command
 
 #####################################################################
 
@@ -141,4 +142,4 @@ if sb_avail:
 
     cmd += ["--file", sb_cert, sb_key]
 
-subprocess.run(cmd, check=True)
+safe_command.run(subprocess.run, cmd, check=True)
